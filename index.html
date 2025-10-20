@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>EcoMove | Mobilidade Sustentável</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section id="login" class="tela ativa">
+        <div class="phone">
+            <div class="card login-card">
+                <h1 class="app-title">EcoMove</h1>
+                <h2 class="subtitle">Bem-vindo(a)! Sua jornada ecológica começa aqui.</h2>
+                <input type="email" id="email" placeholder="Seu email" required/>
+                <button class="btn btn-primary" onclick="mostrarTela('cadastro-final')">Cadastrar / Continuar</button> 
+                <div class="divider"><span>ou</span></div>
+                <button class="btn btn-dark" onclick="loginExistente()">Entrar com Login existente</button>
+                <p class="muted center" style="margin-top:16px; font-size:12px;">Ao continuar, você concorda com nossos Termos de Uso.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadastro-final" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('login')">‹</button>
+                <h2 class="screen-title">Finalizar Cadastro</h2>
+                <span class="spacer"></span>
+            </header>
+            
+            <div class="card login-card" style="margin-top:20px;">
+                <h2 class="subtitle" style="margin-top:0;">Criar sua senha</h2>
+                <input type="email" id="email-cadastro" placeholder="Seu email (pré-preenchido)" value="" disabled style="margin-bottom: 12px;"/>
+                
+                <input type="password" id="senha" placeholder="Crie sua senha (mín. 6 caracteres)" required minlength="6"/>
+                <input type="password" id="confirmar-senha" placeholder="Confirme sua senha" required minlength="6"/>
+                
+                <button class="btn btn-primary" onclick="finalizarCadastro()">Concluir Cadastro</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="home" class="tela">
+        <div class="phone">
+            <header class="topbar" style="margin-bottom: 24px;">
+                <h1 class="screen-title" style="font-size: 26px;">Olá, Usuário! 👋</h1>
+                <button class="icon-btn" onclick="mostrarTela('notificacoes')">🔔</button>
+                <button class="icon-btn" onclick="mostrarTela('perfil')">👤</button>
+            </header>
+
+            <button class="cta-hero" onclick="mostrarTela('escolha-transporte')">
+                <span class="emoji">🚀</span> Começar Novo Percurso
+            </button>
+            
+            <div class="card metrics-card">
+                <p class="metric-title">Seu Saldo & Impacto Hoje</p>
+                <div class="metric-row">
+                    <span class="metric-value" style="color: var(--primary);">120 pts</span>
+                    <span class="metric-label">Pontos Acumulados</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-value" style="color: var(--secondary);">1.2 kg</span>
+                    <span class="metric-label">CO₂ Economizado</span>
+                </div>
+                <button class="link-btn" onclick="mostrarTela('dashboard-completo')">Ver Dashboard Completo</button>
+            </div>
+            <div class="grid-3">
+                <button class="tile" onclick="mostrarTela('carteira')">
+                    <span class="emoji">💳</span>
+                    <span>Carteira</span>
+                </button>
+                <button class="tile" onclick="mostrarTela('recompensas')">
+                    <span class="emoji">🎁</span>
+                    <span>Recompensas</span>
+                </button>
+                <button class="tile" onclick="mostrarTela('impacto')">
+                    <span class="emoji">🌳</span>
+                    <span>Meu Impacto</span>
+                </button>
+            </div>
+
+            <div class="shortcuts">
+                <button class="shortcut" onclick="mostrarTela('metas')">
+                    <span class="emoji">🎯</span>
+                    <span>Metas</span>
+                </button>
+                <button class="shortcut" onclick="mostrarTela('ranking')">
+                    <span class="emoji">🏆</span>
+                    <span>Ranking</span>
+                </button>
+                <button class="shortcut" onclick="mostrarTela('resumo')">
+                    <span class="emoji">🕓</span>
+                    <span>Histórico</span>
+                </button>
+            </div>
+
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+
+    <section id="escolha-transporte" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('home')">‹</button>
+                <h2 class="screen-title">Escolha Seu Transporte</h2>
+                <span class="spacer"></span>
+            </header>
+
+            <div class="chips">
+                <button class="chip chip-active">Todos</button>
+                <button class="chip">Ativo</button>
+                <button class="chip">Público</button>
+                <button class="chip">Compartilhado</button>
+            </div>
+
+            <div class="transport-grid">
+                <button class="transport-card" onclick="mostrarTela('mapa')">
+                    <div class="transport-illu">🚌</div>
+                    <div class="transport-label">Ônibus</div>
+                </button>
+                <button class="transport-card" onclick="mostrarTela('mapa')">
+                    <div class="transport-illu">🚇</div>
+                    <div class="transport-label">Metrô/Trem</div>
+                </button>
+                <button class="transport-card" onclick="mostrarTela('mapa')">
+                    <div class="transport-illu">🚴‍♂️</div>
+                    <div class="transport-label">Bicicleta</div>
+                </button>
+                <button class="transport-card" onclick="mostrarTela('mapa')">
+                    <div class="transport-illu">🚶‍♂️</div>
+                    <div class="transport-label">A Pé</div>
+                </button>
+            </div>
+
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+
+    <section id="mapa" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('escolha-transporte')">‹</button>
+                <h2 class="screen-title">Percurso Ativo</h2>
+                <span class="spacer"></span>
+            </header>
+
+            <div class="search-box">
+                <span class="search-ico">📍</span>
+                <div class="search-col">
+                    <div class="search-title">São Paulo</div>
+                    <div class="search-sub">Até Barueri</div>
+                </div>
+                <button class="search-edit" title="Alterar destino">✎</button>
+            </div>
+
+            <div class="toolbar">
+                <button class="btn-pill">Opções ▾</button>
+                <span class="results">Transporte: Ônibus</span>
+            </div>
+
+            <div class="map-box">
+                <div class="pill pill-left">Distância: <strong>20km</strong></div>
+                <div class="pill pill-right">Tempo: <strong>120min</strong></div>
+            </div>
+
+            <button class="cta-end" onclick="mostrarTela('resumo')">Encerrar Percurso e Ganhar Pontos</button>
+
+            <div class="quick-card">
+                <h3>Detalhes em Tempo Real</h3>
+                <ul class="quick-list">
+                    <li>Distância percorrida: <strong>12,5km</strong></li>
+                    <li>Tempo decorrido: <strong>75min</strong></li>
+                    <li>CO₂ evitado (estimativa): <strong>0,8kg</strong></li>
+                </ul>
+                <button class="link-btn" onclick="mostrarTela('resumo')">+ Ver estimativa de Pontos</button>
+            </div>
+
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+
+    <section id="resumo" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('mapa')">‹</button>
+                <h2 class="screen-title">Trajeto Concluído!</h2>
+                <span class="spacer"></span>
+            </header>
+
+            <div class="banner">
+                <span class="emoji">🎉</span> Você completou a jornada e contribuiu para o planeta!
+            </div>
+
+            <div class="card row">
+                <span class="row-label">Pontos Ganhos:</span>
+                <span class="row-value"><strong>60 Pontos</strong></span>
+            </div>
+            <div class="card row">
+                <span class="row-label">CO₂ Economizado:</span>
+                <span class="row-value"><strong>1,2 Kg</strong></span>
+            </div>
+            <div class="card row">
+                <span class="row-label">Meta Semanal:</span>
+                <span class="row-value"><strong>Concluída</strong></span>
+            </div>
+
+            <p class="muted">Continue assim e desbloqueie novas recompensas e troféus! 🏆</p>
+
+            <div class="card">
+                <h3>Detalhes do Percurso</h3>
+                <p><strong>Distância total:</strong> 20Km</p>
+                <p><strong>Tempo total:</strong> 120min</p>
+                <p><strong>Transporte escolhido:</strong> Ônibus</p>
+                <p><strong>Data:</strong> 20 de Outubro, 11:30</p>
+            </div>
+
+            <button class="btn btn-primary">Compartilhar meu Impacto</button>
+            <button class="link-btn center" onclick="mostrarTela('home')" style="display: block; margin-top: 15px;">Voltar para Home</button>
+
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+
+    <section id="carteira" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('home')">‹</button>
+                <h2 class="screen-title">Minha Carteira</h2>
+                <span class="spacer"></span>
+            </header>
+
+            <div class="card center" style="background: var(--primary); color:#fff; font-size: 20px; font-weight:900;">
+                Saldo Atual: 120 pontos
+            </div>
+
+            <h3 style="margin-top:24px; font-size: 18px;">Histórico de Transações</h3>
+            <div class="row-card">
+                <span>+60 pontos (21/09 - Ônibus)</span>
+                <span style="color:var(--primary); font-weight:800;">+60</span>
+            </div>
+            <div class="row-card">
+                <span>+40 pontos (18/09 - Bicicleta)</span>
+                <span style="color:var(--primary); font-weight:800;">+40</span>
+            </div>
+            <div class="row-card">
+                <span>+20 pontos (15/09 - A pé)</span>
+                <span style="color:var(--primary); font-weight:800;">+20</span>
+            </div>
+            
+            <button class="btn btn-primary mt-24" onclick="mostrarTela('recompensas')">Resgatar Recompensas</button>
+
+
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+
+    <section id="recompensas" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('home')">‹</button>
+                <h2 class="screen-title">Recompensas 🎁</h2>
+                <span class="spacer"></span>
+            </header>
+            
+            <p class="muted" style="text-align: left; margin-bottom: 20px;">Use seus pontos EcoMove para resgatar cupons exclusivos.</p>
+
+            <div class="reward-item">
+                <span>☕ 10% desconto Café Sustentável</span>
+                <span class="reward-points">100 pts</span>
+            </div>
+            <div class="reward-item">
+                <span>🚲 Passe diário Bike Compartilhada</span>
+                <span class="reward-points">200 pts</span>
+            </div>
+            <div class="reward-item">
+                <span>🎬 Ingresso cinema verde</span>
+                <span class="reward-points">400 pts</span>
+            </div>
+            
+            <button class="btn btn-primary mt-24" onclick="mostrarTela('cupom')">Resgatar Cupom Selecionado</button>
+            <button class="link-btn center" style="display: block; margin-top: 15px;">Ver Meus Cupons</button>
+
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+
+    <section id="cupom" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('recompensas')">‹</button>
+                <h2 class="screen-title">Seu Cupom!</h2>
+                <span class="spacer"></span>
+            </header>
+
+            <div class="card center">
+                <h3 style="color:var(--primary-700); font-size:22px; margin-bottom: 5px;">Cupom Resgatado com Sucesso!</h3>
+                <p style="font-size:16px;">10% desconto <strong>Café Sustentável</strong></p>
+                <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=CupomEcoMove" alt="QR Code para 10% de desconto"/>
+                
+                <p class="muted" style="margin-top:16px; margin-bottom: 20px;">Apresente este código na loja para validar.</p>
+                
+                <div class="card" style="margin-top:0; text-align: left; background: var(--bg);">
+                    <h4 style="margin-top:0; font-size: 16px;">Informações Adicionais</h4>
+                    <ul style="list-style: disc; padding-left: 20px; margin: 0; font-size: 14px; color: var(--sub);">
+                        <li>Válido até: 30/09/2025</li>
+                        <li>Local: Café Sustentável</li>
+                        <li>Cidade: São Paulo, SP</li>
+                    </ul>
+                </div>
+                
+                <button class="btn btn-primary mt-12" onclick="mostrarTela('home')">Voltar para Home</button>
+            </div>
+
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+
+    <section id="metas" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('home')">‹</button>
+                <h2 class="screen-title">Definir Metas 🎯</h2>
+                <span class="spacer"></span>
+            </header>
+
+            <div class="card">
+                <h3 style="margin-bottom: 10px;">Meta Semanal de CO₂</h3>
+                <p class="muted" style="margin-top: 0;">Reduza X kg de CO₂ com transporte sustentável.</p>
+                <div class="row" style="margin-top: 15px;">
+                    <span class="row-label">Progresso Atual:</span>
+                    <span class="row-value" style="color: var(--primary);">85%</span>
+                </div>
+                <div class="data-bar-wrap" style="margin-top: 10px;">
+                    <div class="data-bar" style="width: 85%;"></div>
+                </div>
+            </div>
+            
+            <h3 style="margin-top:24px; font-size: 18px;">Metas Ativas</h3>
+            
+            <div class="row-card" style="border-left: 5px solid var(--secondary);">
+                <span>🚴‍♂️ 50km de Bicicleta (Semanal)</span>
+                <span style="font-weight: 800; color: var(--secondary);">35/50 Km</span>
+            </div>
+            <div class="row-card">
+                <span>🚌 4 Dias de Transporte Público</span>
+                <span style="font-weight: 800; color: var(--primary);">Concluída</span>
+            </div>
+            
+            <button class="btn btn-primary mt-24">Adicionar Nova Meta</button>
+
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+
+    <section id="impacto" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('home')">‹</button>
+                <h2 class="screen-title">Visão Rápida</h2>
+                <span class="spacer"></span>
+            </header>
+            
+            <p class="muted" style="text-align: left; margin-bottom: 20px;">Conversões do seu impacto ambiental.</p>
+
+            <div class="card row" style="border-left:5px solid var(--primary); margin-top: 20px;">
+                <span class="row-label">CO₂ Total Economizado:</span>
+                <span class="row-value"><strong>12 Kg</strong></span>
+            </div>
+            <div class="card row" style="border-left:5px solid var(--primary)">
+                <span class="row-label">Equivalente a:</span>
+                <span class="row-value"><strong>4 Árvores Plantadas</strong></span>
+            </div>
+            <div class="card row" style="border-left:5px solid var(--primary)">
+                <span class="row-label">Redução de Carro:</span>
+                <span class="row-value"><strong>60 km</strong></span>
+            </div>
+            
+            <p class="muted center" style="margin-top: 20px;">Clique no botão abaixo para ver o Dashboard Completo de metas!</p>
+            <button class="btn btn-dark" onclick="mostrarTela('dashboard-completo')">Ir para Dashboard Completo</button>
+
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+
+    <section id="dashboard-completo" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('home')">‹</button>
+                <h2 class="screen-title">Dashboard Ambiental 📊</h2>
+                <span class="spacer"></span>
+            </header>
+            
+            <div class="card center" style="background: var(--primary); color:#fff; padding: 24px;">
+                <h3 style="margin: 0 0 10px; color: #fff;">Sua Pegada de Carbono Semanal</h3>
+                <div class="chart-simul">85%</div>
+                <p style="margin: 10px 0 0; color: #fff; font-weight: 500;">Meta de redução alcançada.</p>
+            </div>
+            
+            <h3 style="margin-top:24px; font-size: 18px;">Detalhamento por Modal</h3>
+            
+            <div class="data-panel">
+                <div class="data-item">
+                    <span>Ônibus (Km sustentável)</span>
+                    <span style="color: var(--primary);">450 Km</span>
+                </div>
+                <div class="data-item">
+                    <span>Bicicleta (Km sustentável)</span>
+                    <span style="color: var(--primary);">180 Km</span>
+                </div>
+                <div class="data-item">
+                    <span>A Pé (Km sustentável)</span>
+                    <span style="color: var(--primary);">65 Km</span>
+                </div>
+            </div>
+
+            <button class="btn btn-dark" onclick="mostrarTela('home')">Voltar à Home</button>
+
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+
+    
+    <section id="ranking" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('home')">‹</button>
+                <h2 class="screen-title">Ranking Global 🏆</h2>
+                <span class="spacer"></span>
+            </header>
+
+            <div class="card center" style="background: #fdf6e6; border-left: 5px solid #ffc107;">
+                <p style="font-size: 16px; font-weight: 700; color: var(--ink);">Sua Posição:</p>
+                <h3 style="font-size: 32px; color: #ffc107; margin: 5px 0 10px;">#42</h3>
+                <p class="muted">Total de Pontos: 1200 pts</p>
+            </div>
+            
+            <h3 style="margin-top:24px; font-size: 18px;">Top 5 Eco-Heroes</h3>
+            
+            <div class="row-card" style="border-left: 5px solid #ffc107;">
+                <span>🥇 1. Maria (São Paulo)</span>
+                <span style="font-weight: 800; color: #ffc107;">1550 pts</span>
+            </div>
+            <div class="row-card">
+                <span>🥈 2. João (Barueri)</span>
+                <span style="font-weight: 800; color: var(--primary);">1400 pts</span>
+            </div>
+            <div class="row-card">
+                <span>🥉 3. Pedro (Osasco)</span>
+                <span style="font-weight: 800; color: var(--primary);">1350 pts</span>
+            </div>
+            <div class="row-card" style="background-color: var(--bg);">
+                <span>4. Você</span>
+                <span style="font-weight: 800; color: var(--sub);">1200 pts</span>
+            </div>
+            <div class="row-card">
+                <span>5. Ana (Carapicuíba)</span>
+                <span style="font-weight: 800; color: var(--sub);">1180 pts</span>
+            </div>
+
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+
+    <section id="perfil" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('home')">‹</button>
+                <h2 class="screen-title">Meu Perfil</h2>
+                <span class="spacer"></span>
+            </header>
+            <div class="card center">
+                <p style="font-size: 16px;">Em construção: Detalhes do Perfil, Configurações, etc.</p>
+                <button class="btn btn-dark" onclick="mostrarTela('home')">Voltar</button>
+            </div>
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+    <section id="notificacoes" class="tela">
+        <div class="phone">
+            <header class="topbar">
+                <button class="icon-btn" onclick="mostrarTela('home')">‹</button>
+                <h2 class="screen-title">Notificações</h2>
+                <span class="spacer"></span>
+            </header>
+            <div class="card">
+                <p style="font-weight: 700;">✅ Nova Recompensa!</p>
+                <p class="muted" style="margin-top: 5px;">Você ganhou 60 pontos pelo seu último trajeto de Ônibus.</p>
+            </div>
+            <div class="card">
+                <p style="font-weight: 700;">🎯 Meta Semanal atingida!</p>
+                <p class="muted" style="margin-top: 5px;">Parabéns! Faltam 2 dias para o fim da semana.</p>
+            </div>
+            <nav class="tabbar">
+                <button class="tab" data-tab="home">🏠</button>
+                <button class="tab" data-tab="mapa">📍</button>
+                <button class="tab" data-tab="perfil">👤</button>
+                <button class="tab" data-tab="carteira">💼</button>
+            </nav>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
