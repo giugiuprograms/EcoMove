@@ -9,14 +9,14 @@
 ## 🌳 Descrição do Projeto
 **EcoMove** é um protótipo de aplicação mobile Front-End (HTML, CSS, JavaScript) cujo objetivo é **gamificar a mobilidade urbana sustentável**[cite: 252]. [cite_start]Ele incentiva o uso de transportes ecológicos ao converter a distância percorrida em pontos e recompensas[cite: 241, 244].
 
-[cite_start]O projeto foca no **Design de Alta Fidelidade** e na **Experiência do Usuário (UX)** [cite: 252][cite_start], implementando melhorias e corrigindo fluxos de navegação após testes de usabilidade[cite: 222, 232].
+O projeto foca no **Design de Alta Fidelidade** e na **Experiência do Usuário (UX)** [cite: 252][cite_start], implementando melhorias e corrigindo fluxos de navegação após testes de usabilidade[cite: 222, 232].
 
 ## ✅ Funcionalidades Chave (Simuladas)
 
-* [cite_start]**Rastreamento & Pontuação:** Simulação do registro do percurso (GPS) e conversão de distância em pontos por modalidade (caminhada, bicicleta, etc.)[cite: 239, 241].
-* [cite_start]**Recompensas:** Catálogo de cupons de parceiros e fluxo de resgate via QR Code digital[cite: 243, 245].
-* [cite_start]**Acompanhamento de Impacto:** Exibição de $\text{CO}_2$ evitado e Dashboard para visualização de metas e progresso[cite: 247].
-* [cite_start]**UX Aprimorada:** A estrutura de telas foi desenhada para ser intuitiva, obtendo **100% de sucesso** nas tarefas propostas no teste de usabilidade[cite: 193].
+* **Rastreamento & Pontuação:** Simulação do registro do percurso (GPS) e conversão de distância em pontos por modalidade (caminhada, bicicleta, etc.)[cite: 239, 241].
+* **Recompensas:** Catálogo de cupons de parceiros e fluxo de resgate via QR Code digital[cite: 243, 245].
+* **Acompanhamento de Impacto:** Exibição de $\text{CO}_2$ evitado e Dashboard para visualização de metas e progresso[cite: 247].
+* **UX Aprimorada:** A estrutura de telas foi desenhada para ser intuitiva, obtendo **100% de sucesso** nas tarefas propostas no teste de usabilidade[cite: 193].
 
 ## ⚙️ Como Executar o Projeto Localmente
 
