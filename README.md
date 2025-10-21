@@ -1,7 +1,7 @@
 # 🚀 EcoMove App | Check-in Sustentável (Protótipo Front-End)
 
 ## 🌳 Descrição do Projeto
-**EcoMove** é um protótipo de aplicação mobile Front-End (HTML, CSS, JavaScript) cujo objetivo é **gamificar a mobilidade urbana sustentável**[cite: 252]. [cite_start]Ele incentiva o uso de transportes ecológicos ao converter a distância percorrida em pontos e recompensas[cite: 241, 244].
+**EcoMove** é um protótipo de aplicação mobile Front-End (HTML, CSS, JavaScript) cujo objetivo é **gamificar a mobilidade urbana sustentável**. Ele incentiva o uso de transportes ecológicos ao converter a distância percorrida em pontos e recompensas
 
 O projeto foca no **Design de Alta Fidelidade** e na **Experiência do Usuário (UX)** [cite: 252][cite_start], implementando melhorias e corrigindo fluxos de navegação após testes de usabilidade[cite: 222, 232].
 
