@@ -7,7 +7,6 @@
 </p>
 
 ## 🌳 Descrição do Projeto
-
 [cite_start]O **EcoMove** é um protótipo de aplicação mobile Front-End (HTML, CSS, JavaScript) cujo objetivo é **gamificar a mobilidade urbana sustentável**[cite: 252]. [cite_start]Ele incentiva o uso de transportes ecológicos ao converter a distância percorrida em pontos e recompensas[cite: 241, 244].
 
 [cite_start]O projeto foca no **Design de Alta Fidelidade** e na **Experiência do Usuário (UX)** [cite: 252][cite_start], implementando melhorias e corrigindo fluxos de navegação após testes de usabilidade[cite: 222, 232].
@@ -32,7 +31,4 @@
 3.  **Abra o arquivo `index.html`** diretamente no seu navegador (Chrome, Firefox, etc.) para visualizar a interface.
 
 
-<p align="center">
-  <a href="https://www.linkedin.com/login/pt"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="mailto:[SEU EMAIL]"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
-</p>
+
