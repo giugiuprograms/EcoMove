@@ -31,11 +31,6 @@
     ```
 3.  **Abra o arquivo `index.html`** diretamente no seu navegador (Chrome, Firefox, etc.) para visualizar a interface.
 
-## ✒️ Autor
-
-| [Seu Nome Aqui] |
-| :---: |
-| Desenvolvedor Front-End |
 
 <p align="center">
   <a href="https://www.linkedin.com/login/pt"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
