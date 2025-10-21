@@ -18,17 +18,4 @@ O projeto foca no **Design de Alta Fidelidade** e na **Experiência do Usuário 
 * **Acompanhamento de Impacto:** Exibição de $\text{CO}_2$ evitado e Dashboard para visualização de metas e progresso[cite: 247].
 * **UX Aprimorada:** A estrutura de telas foi desenhada para ser intuitiva, obtendo **100% de sucesso** nas tarefas propostas no teste de usabilidade[cite: 193].
 
-## ⚙️ Como Executar o Projeto Localmente
-
-1.  **Clone o repositório:**
-    ```bash
-    git clone [SUA URL DO REPOSITÓRIO AQUI]
-    ```
-2.  **Entre na pasta do projeto:**
-    ```bash
-    cd EcoMove-App
-    ```
-3.  **Abra o arquivo `index.html`** diretamente no seu navegador (Chrome, Firefox, etc.) para visualizar a interface.
-
-
 
