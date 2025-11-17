@@ -3,7 +3,7 @@
 ## 🧩 Como Executar o Protótipo Localmente
 
 Para visualizar e navegar pelo protótipo funcional do **EcoMove**, basta seguir um processo simples e rápido.
-Não é necessário instalar nada — apenas ter um navegador atualizado (Chrome recomendado).
+Não é necessário instalar nada,  apenas ter um navegador atualizado (Chrome recomendado).
 
 ### 📥 1. Baixe os Arquivos Necessários
 
