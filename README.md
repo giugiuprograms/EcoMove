@@ -46,7 +46,6 @@ EcoMove/
 
 ---
 
-Se quiser, posso adicionar uma seção de *créditos*, *prints das telas*, *objetivo acadêmico*, ou um *badge* estiloso no topo.
 
 
 
